@@ -1,0 +1,414 @@
+{
+    "dates": {
+        "maximum": "2022-08-11",
+        "minimum": "2022-07-19"
+    },
+    "page": 1,
+    "results": [
+        {
+            "adult": false,
+            "backdrop_path": "/tsC3DRGAQvkoA88lQQfbQ40byFS.jpg",
+            "genre_ids": [
+                27,
+                53
+            ],
+            "id": 756999,
+            "original_language": "en",
+            "original_title": "The Black Phone",
+            "overview": "Finney Shaw, a shy but clever 13-year-old boy, is abducted by a sadistic killer and trapped in a soundproof basement where screaming is of little use. When a disconnected phone on the wall begins to ring, Finney discovers that he can hear the voices of the killer’s previous victims. And they are dead set on making sure that what happened to them doesn’t happen to Finney.",
+            "popularity": 5992.936,
+            "poster_path": "/bxHZpV02OOu9vq3sb3MsOudEnYc.jpg",
+            "release_date": "2022-06-22",
+            "title": "The Black Phone",
+            "video": false,
+            "vote_average": 7.8,
+            "vote_count": 772
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/p1F51Lvj3sMopG948F5HsBbl43C.jpg",
+            "genre_ids": [
+                28,
+                12,
+                14
+            ],
+            "id": 616037,
+            "original_language": "en",
+            "original_title": "Thor: Love and Thunder",
+            "overview": "After his retirement is interrupted by Gorr the God Butcher, a galactic killer who seeks the extinction of the gods, Thor enlists the help of King Valkyrie, Korg, and ex-girlfriend Jane Foster, who now inexplicably wields Mjolnir as the Mighty Thor. Together they embark upon a harrowing cosmic adventure to uncover the mystery of the God Butcher’s vengeance and stop him before it’s too late.",
+            "popularity": 3503.056,
+            "poster_path": "/pIkRyD18kl4FhoCNQuWxWu5cBLM.jpg",
+            "release_date": "2022-07-08",
+            "title": "Thor: Love and Thunder",
+            "video": false,
+            "vote_average": 6.8,
+            "vote_count": 1065
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/egoyMDLqCxzjnSrWOz50uLlJWmD.jpg",
+            "genre_ids": [
+                28,
+                12,
+                10751,
+                35
+            ],
+            "id": 675353,
+            "original_language": "en",
+            "original_title": "Sonic the Hedgehog 2",
+            "overview": "After settling in Green Hills, Sonic is eager to prove he has what it takes to be a true hero. His test comes when Dr. Robotnik returns, this time with a new partner, Knuckles, in search for an emerald that has the power to destroy civilizations. Sonic teams up with his own sidekick, Tails, and together they embark on a globe-trotting journey to find the emerald before it falls into the wrong hands.",
+            "popularity": 1654.126,
+            "poster_path": "/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg",
+            "release_date": "2022-03-30",
+            "title": "Sonic the Hedgehog 2",
+            "video": false,
+            "vote_average": 7.7,
+            "vote_count": 2517
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/riyxG4iMQID7GovFPEGI3czQMYz.jpg",
+            "genre_ids": [
+                28,
+                53
+            ],
+            "id": 961484,
+            "original_language": "en",
+            "original_title": "Last Seen Alive",
+            "overview": "After Will Spann's wife suddenly vanishes at a gas station, his desperate search to find her leads him down a dark path that forces him to run from authorities and take the law into his own hands.",
+            "popularity": 2032.372,
+            "poster_path": "/qvqyDj34Uivokf4qIvK4bH0m0qF.jpg",
+            "release_date": "2022-05-19",
+            "title": "Last Seen Alive",
+            "video": false,
+            "vote_average": 6.6,
+            "vote_count": 135
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/jVGHRpSgtE2MQLJhC5q4lXmPNQW.jpg",
+            "genre_ids": [
+                27,
+                53,
+                28
+            ],
+            "id": 960258,
+            "original_language": "en",
+            "original_title": "Shark Bait",
+            "overview": "A group of friends enjoying a weekend steal a couple of jetskis racing them out to sea, ending up in a horrific head-on collision. They struggle to find a way home with a badly injured friend while from the waters below predators lurk.",
+            "popularity": 709.886,
+            "poster_path": "/mVVU9zC8snNHlcqYONY2HOsh9ob.jpg",
+            "release_date": "2022-05-13",
+            "title": "Shark Bait",
+            "video": false,
+            "vote_average": 6.5,
+            "vote_count": 81
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/rfbpgHbotsnB4sopZDIA3EhPecQ.jpg",
+            "genre_ids": [
+                35,
+                28
+            ],
+            "id": 746333,
+            "original_language": "fr",
+            "original_title": "Super-héros malgré lui",
+            "overview": "Struggling actor Cedric seems doomed to lead the life of a loser. He's broke and his girlfriend has dumped him. Even his own father, sister and best buddies have lost faith in his ability to do anything worthwhile. Then finally, he gets a lead role: the superhero “Badman“. A chance to pull himself out of an endless downward spiral and gain his father's respect. But fate strikes again! Rushing off the set in full costume, Cedric has a car accident, loses his memory, and wakes up convinced he really is a superhero on mission! Confronted with real-life adventure and danger, his true nature is put to the test. Does he have what it takes to tackle the forces of evil, defend the weakest among us and beat the bad guys? But you can't just decide to be a hero, let alone a superhero... especially someone like Cedric!",
+            "popularity": 481.279,
+            "poster_path": "/Aie2kiYOUgZeakpshM2N64PKof1.jpg",
+            "release_date": "2022-02-02",
+            "title": "Superwho?",
+            "video": false,
+            "vote_average": 6.1,
+            "vote_count": 169
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/vzJkN2vpIiCXzQ6AgwMmNhRPag2.jpg",
+            "genre_ids": [
+                16,
+                18,
+                878,
+                10402
+            ],
+            "id": 776305,
+            "original_language": "ja",
+            "original_title": "竜とそばかすの姫",
+            "overview": "Suzu is a 17-year-old high-school student living in a rural town with her father. Wounded by the loss of her mother at a young age, Suzu one day discovers the massive online world \"U\" and dives into this alternate reality as her avatar, Belle. Before long, all of U's eyes are fixed on Belle, when, suddenly, a mysterious, dragon-like figure appears before her.",
+            "popularity": 230.495,
+            "poster_path": "/e143CxHsD7oVxqrxk29I5SJrjrl.jpg",
+            "release_date": "2021-07-16",
+            "title": "Belle",
+            "video": false,
+            "vote_average": 8,
+            "vote_count": 376
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/klioTuA8JepFgV0EC7IxqV6VbrM.jpg",
+            "genre_ids": [
+                27,
+                28,
+                53
+            ],
+            "id": 776797,
+            "original_language": "zh",
+            "original_title": "哭悲",
+            "overview": "A young couple is pushed to the limits of sanity as they attempt to be reunited amid the chaos of a pandemic outbreak. The streets erupt into violence and depravity, as those infected are driven to enact the most cruel and ghastly things imaginable.",
+            "popularity": 215.462,
+            "poster_path": "/a7VHvhROWorsWrtNKQnLZTxpxuG.jpg",
+            "release_date": "2021-01-22",
+            "title": "The Sadness",
+            "video": false,
+            "vote_average": 6.7,
+            "vote_count": 231
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/4nswAImPQjLbyCpXkwHjFlXxAeG.jpg",
+            "genre_ids": [
+                16,
+                18,
+                878
+            ],
+            "id": 741335,
+            "original_language": "ja",
+            "original_title": "アイの歌声を聴かせて",
+            "overview": "Satomi is fine being alone until an AI named Shion joins her class with a song and a promise to make her happy. While Shion’s musical numbers and princess gowns don’t quite pass as human, her antics bring Satomi closer to four other classmates. Together, they make memories worth saving, but even our most precious data can be erased.",
+            "popularity": 199.644,
+            "poster_path": "/bDx77d1SLXGWIGMlz6nWx0SghiT.jpg",
+            "release_date": "2021-10-29",
+            "title": "Sing a Bit of Harmony",
+            "video": false,
+            "vote_average": 8,
+            "vote_count": 5
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/gSsTGqZ7wT0uGhLDpcUOe1jYsi6.jpg",
+            "genre_ids": [
+                18,
+                80,
+                53
+            ],
+            "id": 660353,
+            "original_language": "en",
+            "original_title": "Ted K",
+            "overview": "The True Story of Ted Kaczynski, the infamous Unabomber, who wants to destroy modern technology to create a world for himself in the Montana wilderness.",
+            "popularity": 184.21,
+            "poster_path": "/xgBzMsP8a10rEHXNSytPsLhwUVF.jpg",
+            "release_date": "2021-10-29",
+            "title": "Ted K",
+            "video": false,
+            "vote_average": 5.8,
+            "vote_count": 38
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/zTffxrYeeKfDMuaIeabDjKTaSuX.jpg",
+            "genre_ids": [
+                27,
+                53
+            ],
+            "id": 629015,
+            "original_language": "en",
+            "original_title": "Shut In",
+            "overview": "A young single mother is held captive along with her two children by a violent ex and must plot their escape before it’s too late.",
+            "popularity": 215.33,
+            "poster_path": "/b5ug4LyLQFeR6azAJyIPBQz5ur9.jpg",
+            "release_date": "2022-03-24",
+            "title": "Shut In",
+            "video": false,
+            "vote_average": 7.3,
+            "vote_count": 57
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/ugZbX5lKx4L9ONEu0WTNbR96J0t.jpg",
+            "genre_ids": [
+                53,
+                27
+            ],
+            "id": 768447,
+            "original_language": "en",
+            "original_title": "Motherly",
+            "overview": "Kate and her daughter Beth live alone in an isolated farmhouse in the woods, but when Kate slowly begins to suspect that something sinister is happening, her motherly instincts are put to the test.",
+            "popularity": 126.691,
+            "poster_path": "/wmh1likQEetSLIUs5MAvfWjEayY.jpg",
+            "release_date": "2022-08-04",
+            "title": "Motherly",
+            "video": false,
+            "vote_average": 0,
+            "vote_count": 0
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/p8XnVA7zWZu7ZJsM1Cm9l7S9IH8.jpg",
+            "genre_ids": [
+                16,
+                28,
+                12,
+                10751,
+                878
+            ],
+            "id": 539681,
+            "original_language": "en",
+            "original_title": "DC League of Super-Pets",
+            "overview": "When Superman and the rest of the Justice League are kidnapped, Krypto the Super-Dog must convince a rag-tag shelter pack - Ace the hound, PB the potbellied pig, Merton the turtle and Chip the squirrel - to master their own newfound powers and help him rescue the superheroes.",
+            "popularity": 148.157,
+            "poster_path": "/r7XifzvtezNt31ypvsmb6Oqxw49.jpg",
+            "release_date": "2022-07-27",
+            "title": "DC League of Super-Pets",
+            "video": false,
+            "vote_average": 0,
+            "vote_count": 0
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/54PmeEzQMvpojpJBku61ZGQnWUX.jpg",
+            "genre_ids": [
+                16,
+                12,
+                28,
+                14
+            ],
+            "id": 900667,
+            "original_language": "ja",
+            "original_title": "ONE PIECE FILM RED",
+            "overview": "Uta — the most beloved singer in the world. Her voice, which she sings with while concealing her true identity, has been described as “otherworldly.” She will appear in public for the first time at a live concert. As the venue fills with all kinds of Uta fans — excited pirates, the Navy watching closely, and the Straw Hats led by Luffy who simply came to enjoy her sonorous performance — the voice that the whole world has been waiting for is about to resound. The story begins with the shocking fact that she is \"Shanks' daughter.”",
+            "popularity": 123.939,
+            "poster_path": "/gpzMYQQrDLSihHmCLHAKT8h30Oc.jpg",
+            "release_date": "2022-08-06",
+            "title": "One Piece Film: Red",
+            "video": false,
+            "vote_average": 0,
+            "vote_count": 0
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/527Kxta1PjtovdFbsBe3vxO6Zfw.jpg",
+            "genre_ids": [
+                28,
+                53,
+                9648
+            ],
+            "id": 718930,
+            "original_language": "en",
+            "original_title": "Bullet Train",
+            "overview": "Unlucky assassin Ladybug is determined to do his job peacefully after one too many gigs gone off the rails. Fate, however, may have other plans, as Ladybug's latest mission puts him on a collision course with lethal adversaries from around the globe—all with connected, yet conflicting, objectives—on the world's fastest train.",
+            "popularity": 89.723,
+            "poster_path": "/tVxDe01Zy3kZqaZRNiXFGDICdZk.jpg",
+            "release_date": "2022-08-03",
+            "title": "Bullet Train",
+            "video": false,
+            "vote_average": 0,
+            "vote_count": 0
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/vKvB3Lw8ZxUMluD4igq3L9oJztE.jpg",
+            "genre_ids": [
+                878,
+                27,
+                9648,
+                53
+            ],
+            "id": 762504,
+            "original_language": "en",
+            "original_title": "Nope",
+            "overview": "Residents in a lonely gulch of inland California bear witness to an uncanny, chilling discovery.",
+            "popularity": 120.429,
+            "poster_path": "/AcKVlWaNVVVFQwro3nLXqPljcYA.jpg",
+            "release_date": "2022-07-20",
+            "title": "Nope",
+            "video": false,
+            "vote_average": 3.7,
+            "vote_count": 3
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/irDiMv0ddrr2evxntiEje9B1t1U.jpg",
+            "genre_ids": [
+                10751,
+                35,
+                16,
+                28
+            ],
+            "id": 366672,
+            "original_language": "en",
+            "original_title": "Paws of Fury: The Legend of Hank",
+            "overview": "A hard-on-his-luck hound Hank finds himself in a town full of cats who need a hero to defend them from a ruthless villain's evil plot to wipe their village off the map. With help from a reluctant teacher to train him, our underdog must assume the role of town samurai and team up with the villagers to save the day.",
+            "popularity": 62.051,
+            "poster_path": "/vccE9bBa9mgghFpkWzU1fQqmOKB.jpg",
+            "release_date": "2022-07-14",
+            "title": "Paws of Fury: The Legend of Hank",
+            "video": false,
+            "vote_average": 3.6,
+            "vote_count": 5
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/yd2xws5wVT2Ss6f0Q0oTkdYtiQE.jpg",
+            "genre_ids": [
+                16,
+                35,
+                10751,
+                12
+            ],
+            "id": 664236,
+            "original_language": "en",
+            "original_title": "Extinct",
+            "overview": "Op and Ed, two adorable donut-shaped animals - flummels - accidentally time-travel from 1835 to modern-day Shanghai.  There they discover traffic, trans fats, and worst of all, that flummels are now extinct. It's up to this bumbling pair to save themselves and their species...and, just maybe, change the course of history.",
+            "popularity": 69.136,
+            "poster_path": "/tRnPT88iD5zgeUPjHqaZznrxk5m.jpg",
+            "release_date": "2021-02-11",
+            "title": "Extinct",
+            "video": false,
+            "vote_average": 6.4,
+            "vote_count": 113
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/2oXQpm0wfOkIL0jBJABbL5AfMs6.jpg",
+            "genre_ids": [
+                27,
+                9648,
+                53
+            ],
+            "id": 760104,
+            "original_language": "en",
+            "original_title": "X",
+            "overview": "In 1979, a group of young filmmakers set out to make an adult film in rural Texas, but when their reclusive, elderly hosts catch them in the act, the cast find themselves fighting for their lives.",
+            "popularity": 70.002,
+            "poster_path": "/woTQx9Q4b8aO13jR9dsj8C9JESy.jpg",
+            "release_date": "2022-03-17",
+            "title": "X",
+            "video": false,
+            "vote_average": 6.8,
+            "vote_count": 562
+        },
+        {
+            "adult": false,
+            "backdrop_path": "/sqdsuvy8X6Maila4IAc7deMtPAA.jpg",
+            "genre_ids": [
+                18,
+                27,
+                878
+            ],
+            "id": 819876,
+            "original_language": "en",
+            "original_title": "Crimes of the Future",
+            "overview": "As the human species adapts to a synthetic environment, the body undergoes new transformations and mutations. Accompanied by his partner Caprice, celebrity performance artist Saul Tenser showcases the metamorphosis of his organs. Meanwhile, a mysterious group tries to use Saul's notoriety to shed light on the next phase of human evolution.",
+            "popularity": 49.775,
+            "poster_path": "/iSx6t4mj1FT4ePqPYHW287SmNa1.jpg",
+            "release_date": "2022-05-25",
+            "title": "Crimes of the Future",
+            "video": false,
+            "vote_average": 5.9,
+            "vote_count": 178
+        }
+    ],
+    "total_pages": 19,
+    "total_results": 375
+}

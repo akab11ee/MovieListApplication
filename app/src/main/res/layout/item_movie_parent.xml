@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.restaurant.movielistapplication.domain.models.movie.Movie" />
+
+        <variable
+            name="view"
+            type="android.view.View" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/movie_item"
+        style="@style/Card.Clickable.ListItem">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/TextView.Primary.Subheader.Bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/horizontal_margin_mid"
+                android:text="@{item.sectionName}"
+                tools:text="Upcoming Movies" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/image_wrapper"
+                style="@style/Card.CircleImage.ListItem"
+                android:layout_width="@dimen/default_image_size"
+                android:layout_height="@dimen/default_image_size"
+                android:layout_alignParentEnd="true">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="@dimen/default_image_size"
+                    android:layout_height="@dimen/default_image_size"
+                    android:layout_gravity="center"
+                    android:padding="@dimen/min_padding"
+                    tools:load_arrow_image="@{item.expanded}" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_title"
+                android:layout_marginTop="@dimen/vertical_margin_small"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:visibility="@{item.expanded == true ? view.VISIBLE : view.GONE}"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/item_movie_child" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

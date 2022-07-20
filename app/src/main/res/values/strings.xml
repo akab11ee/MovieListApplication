@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MovieListApplication</string>
+    <string name="release_date">Release Date</string>
+    <string name="vote_count">Vote Count</string>
 </resources>
