@@ -7,7 +7,6 @@ import com.restaurant.movielistapplication.databinding.LayoutDialogBinding
 import com.restaurant.movielistapplication.domain.models.MovieDetails
 import com.restaurant.movielistapplication.utils.AppConstant
 import com.restaurant.movielistapplication.utils.toastL
-import kotlinx.android.synthetic.main.layout_dialog.*
 
 /**
  * @Author: Akash Abhishek
@@ -40,7 +39,7 @@ class MovieDetailBottomSheetDialog : BaseBottomSheetDialog<LayoutDialogBinding>(
 
         }
 
-        img_video.setOnClickListener {
+        binding.imgVideo.setOnClickListener {
             movieDetails?.title?.let { it1 -> requireActivity().toastL(it1) }
         }
     }

@@ -2,7 +2,6 @@ package com.restaurant.movielistapplication.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -51,7 +50,7 @@ class MovieParentAdapter :
         val childAdapter = MovieDetailChildAdapter()
         holder.binding.recyclerView.apply {
             layoutManager =
-                LinearLayoutManager(holder.itemView.context, LinearLayout.HORIZONTAL, false)
+                LinearLayoutManager(holder.itemView.context, RecyclerView.HORIZONTAL, false)
             adapter = childAdapter
             childAdapter.setCallback(this@MovieParentAdapter)
             childAdapter.submitList(movie.movieDetailList)

@@ -12,7 +12,6 @@ import com.restaurant.movielistapplication.presentation.adapter.MovieParentAdapt
 import com.restaurant.movielistapplication.presentation.dialog.MovieDetailBottomSheetDialog
 import com.restaurant.movielistapplication.presentation.interfaces.OnParentItemClickListener
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.activity_movie.*
 import kotlinx.coroutines.flow.collect
 
 /**
@@ -41,13 +40,13 @@ class MovieListActivity : BaseActivity<ActivityMovieBinding, MovieListViewModel>
     }
 
     private fun initRecyclerView() {
-        expandable_recycler_view.apply {
-            layoutManager = LinearLayoutManager(context)
-            setHasFixedSize(true)
-        }
         movieParentAdapter = MovieParentAdapter()
         movieParentAdapter.onItemClickListener = this
-        expandable_recycler_view.adapter = movieParentAdapter
+        binding.expandableRecyclerView.apply {
+            layoutManager = LinearLayoutManager(context)
+            setHasFixedSize(true)
+            adapter = movieParentAdapter
+        }
     }
 
     private fun observeMovieListResponse() {
