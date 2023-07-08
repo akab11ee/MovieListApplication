@@ -1,6 +1,6 @@
-package com.restaurant.movielistapplication.data.mappers
+package com.restaurant.movielistapplication.data.mappers.moviesection
 
-import com.restaurant.movielistapplication.getNowPlayingMovieEntity
+import com.restaurant.movielistapplication.getMovieSectionsEntityResponse
 import org.junit.Assert.assertEquals
 import org.junit.Before
 import org.junit.Test
@@ -23,7 +23,7 @@ class MovieDetailsMapperTest {
     fun `mapping function called id remains same`() {
 
         // Arrange
-        val nowPlayingEntity = getNowPlayingMovieEntity().results
+        val nowPlayingEntity = getMovieSectionsEntityResponse().results
 
         // Act
         val result = movieDetailsMapper.mapFromEntity(nowPlayingEntity)
@@ -36,7 +36,7 @@ class MovieDetailsMapperTest {
     fun `mapping function called poster path gives complete image  url`() {
 
         // Arrange
-        val nowPlayingEntity = getNowPlayingMovieEntity().results
+        val nowPlayingEntity = getMovieSectionsEntityResponse().results
         val completePosterImagePath =
             "https://image.tmdb.org/t/p/w500" + nowPlayingEntity[0].posterPath
 

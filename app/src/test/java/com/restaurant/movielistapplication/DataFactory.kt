@@ -3,15 +3,15 @@ package com.restaurant.movielistapplication
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.TypeAdapter
-import com.restaurant.movielistapplication.data.storage.models.movienowplaying.ListMovieNowPlayingEntity
+import com.restaurant.movielistapplication.data.storage.model.ListMovieSectionsEntity
 import java.io.File
 
 
 private val gson: Gson = GsonBuilder().create()
 
 
-fun getNowPlayingMovieEntity(): ListMovieNowPlayingEntity {
-    val jsonString = getJson("NowPlayingMovieResponse.json")
+fun getMovieSectionsEntityResponse(): ListMovieSectionsEntity {
+    val jsonString = getJson("MovieSectionResponse.json")
     return buildDataClassFromJson(jsonString)
 }
 

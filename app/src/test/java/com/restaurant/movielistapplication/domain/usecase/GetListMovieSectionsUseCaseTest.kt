@@ -2,7 +2,8 @@ package com.restaurant.movielistapplication.domain.usecase
 
 import com.restaurant.movielistapplication.domain.models.Response
 import com.restaurant.movielistapplication.domain.repository.MoviesRepository
-import com.restaurant.movielistapplication.getNowPlayingMovieEntity
+import com.restaurant.movielistapplication.getMovieSectionsEntityResponse
+import com.restaurant.movielistapplication.utils.AppConstant
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
@@ -16,34 +17,34 @@ import org.junit.Test
  * @Date: 20 July 2022
  */
 
-class GetListMovieNowPlayingUseCaseTest {
+class GetListMovieSectionsUseCaseTest {
     private lateinit var moviesRepository: MoviesRepository
 
-    private lateinit var getListMovieNowPlayingUseCase: GetListMovieNowPlayingUseCase
+    private lateinit var getListMovieSectionsUseCase: GetListMovieSectionsUseCase
 
     @Before
     fun setUp() {
         moviesRepository = mockk(relaxUnitFun = true)
-        getListMovieNowPlayingUseCase = GetListMovieNowPlayingUseCase(moviesRepository)
+        getListMovieSectionsUseCase = GetListMovieSectionsUseCase(moviesRepository)
     }
 
     @Test
     fun `execute method should call repository`() {
         // Arrange
-        val movieNowPlayingEntity = getNowPlayingMovieEntity()
+        val movieNowPlayingEntity = getMovieSectionsEntityResponse()
         every {
             runBlocking {
-                moviesRepository.getMoviesNowPlaying()
+                moviesRepository.getMovieSections(AppConstant.NOW_PLAYING)
             }
         } returns flow { Response.Success(movieNowPlayingEntity) }
 
         // Act
         runBlocking {
-            getListMovieNowPlayingUseCase.execute()
+            getListMovieSectionsUseCase.execute(AppConstant.NOW_PLAYING)
         }
         verify(exactly = 1) {
             runBlocking {
-                moviesRepository.getMoviesNowPlaying()
+                moviesRepository.getMovieSections(AppConstant.NOW_PLAYING)
             }
         }
     }
