@@ -6,13 +6,13 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.restaurant.movielistapplication.base.BaseActivity
 import com.restaurant.movielistapplication.databinding.ActivityMovieBinding
-import com.restaurant.movielistapplication.domain.models.MovieDetails
 import com.restaurant.movielistapplication.domain.models.movie.Movie
+import com.restaurant.movielistapplication.domain.models.moviesection.MovieDetails
 import com.restaurant.movielistapplication.presentation.adapter.MovieParentAdapter
 import com.restaurant.movielistapplication.presentation.dialog.MovieDetailBottomSheetDialog
 import com.restaurant.movielistapplication.presentation.interfaces.OnParentItemClickListener
+import com.restaurant.movielistapplication.utils.AppConstant
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 
 /**
  * @Author: Akash Abhishek
@@ -33,8 +33,7 @@ class MovieListActivity : BaseActivity<ActivityMovieBinding, MovieListViewModel>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.getListMoviesPopular()
-        viewModel.getListNowPlayingMovies()
+        viewModel.getMovieSectionDetails(AppConstant.NOW_PLAYING, AppConstant.MOST_POPULAR)
         initRecyclerView()
         observeMovieListResponse()
     }

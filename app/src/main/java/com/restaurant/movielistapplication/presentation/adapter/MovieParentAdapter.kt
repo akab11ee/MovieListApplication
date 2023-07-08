@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.restaurant.movielistapplication.R
 import com.restaurant.movielistapplication.databinding.ItemMovieParentBinding
-import com.restaurant.movielistapplication.domain.models.MovieDetails
 import com.restaurant.movielistapplication.domain.models.movie.Movie
+import com.restaurant.movielistapplication.domain.models.moviesection.MovieDetails
 import com.restaurant.movielistapplication.presentation.interfaces.OnChildItemClickListener
 import com.restaurant.movielistapplication.presentation.interfaces.OnParentItemClickListener
 
@@ -22,7 +22,6 @@ import com.restaurant.movielistapplication.presentation.interfaces.OnParentItemC
 class MovieParentAdapter :
     ListAdapter<Movie, MovieParentAdapter.MovieViewHolder>(MovieComparator),
     OnChildItemClickListener {
-
 
     object MovieComparator : DiffUtil.ItemCallback<Movie>() {
         override fun areItemsTheSame(oldItem: Movie, newItem: Movie): Boolean =

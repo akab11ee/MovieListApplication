@@ -7,7 +7,7 @@
 
         <variable
             name="item"
-            type="com.restaurant.movielistapplication.domain.models.MovieDetails" />
+            type="com.restaurant.movielistapplication.domain.models.moviesection.MovieDetails" />
 
         <variable
             name="view"

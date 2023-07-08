@@ -3,21 +3,17 @@ package com.restaurant.movielistapplication.presentation
 import androidx.lifecycle.viewModelScope
 import com.restaurant.movielistapplication.base.BaseViewModel
 import com.restaurant.movielistapplication.di.qualifier.IoDispatcher
-import com.restaurant.movielistapplication.domain.models.MovieDetails
 import com.restaurant.movielistapplication.domain.models.Response
 import com.restaurant.movielistapplication.domain.models.movie.Movie
-import com.restaurant.movielistapplication.domain.usecase.GetListMovieNowPlayingUseCase
-import com.restaurant.movielistapplication.domain.usecase.GetListMovieTopRatedUseCase
-import com.restaurant.movielistapplication.domain.usecase.GetListMovieUpcomingUseCase
-import com.restaurant.movielistapplication.domain.usecase.GetListMoviesPopularUseCase
+import com.restaurant.movielistapplication.domain.models.moviesection.ListMovieSections
+import com.restaurant.movielistapplication.domain.models.moviesection.MovieDetails
+import com.restaurant.movielistapplication.domain.usecase.GetListMovieSectionsUseCase
 import com.restaurant.movielistapplication.presentation.state.MovieState
 import com.restaurant.movielistapplication.utils.AppConstant
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -29,116 +25,73 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MovieListViewModel @Inject constructor(
-    private val getListMoviesPopularUseCase: GetListMoviesPopularUseCase,
-    private val getListMovieNowPlayingUseCase: GetListMovieNowPlayingUseCase,
-    private val getListMovieUpcomingUseCase: GetListMovieUpcomingUseCase,
-    private val getListMovieTopRatedUseCase: GetListMovieTopRatedUseCase,
+    private val getListMovieSectionsUseCase: GetListMovieSectionsUseCase,
     @IoDispatcher private val ioDispatcher: CoroutineDispatcher
 ) : BaseViewModel() {
 
-    private var nowPlayingMovieDetails = listOf<MovieDetails>()
-    private var popularMovieDetail = listOf<MovieDetails>()
-    private var upcomingMovieDetails = listOf<MovieDetails>()
-    private var topRatedMovieDetails = listOf<MovieDetails>()
+    private var listNowPlayingMovie = listOf<MovieDetails>()
+    private var listPopularMovie = listOf<MovieDetails>()
+    private var listUpComingMovie = listOf<MovieDetails>()
+    private var listTopRatedMovie = listOf<MovieDetails>()
     private var movieState = MovieState()
 
     private val _listMovies = MutableStateFlow(
         getDefaultMovieList(
-            nowPlayingMovieDetails,
-            popularMovieDetail,
-            upcomingMovieDetails,
-            topRatedMovieDetails
+            listNowPlayingMovie,
+            listPopularMovie,
+            listUpComingMovie,
+            listTopRatedMovie
         )
     )
     val listMovies = _listMovies.asStateFlow()
 
-    fun getDefaultMovieList(
+    private fun getDefaultMovieList(
         nowPlayingMovieDetails: List<MovieDetails>,
         popularMovieDetail: List<MovieDetails>,
         upcomingMovieDetails: List<MovieDetails>,
         topRatedMovieDetails: List<MovieDetails>
     ): List<Movie> {
-        this.nowPlayingMovieDetails = nowPlayingMovieDetails
-        this.popularMovieDetail = popularMovieDetail
-        this.upcomingMovieDetails = upcomingMovieDetails
-        this.topRatedMovieDetails = topRatedMovieDetails
+        this.listNowPlayingMovie = nowPlayingMovieDetails
+        this.listPopularMovie = popularMovieDetail
+        this.listUpComingMovie = upcomingMovieDetails
+        this.listTopRatedMovie = topRatedMovieDetails
         val nowPlayingMovie = Movie(
             isExpanded = movieState.isNowPlayingExpanded,
             sectionName = AppConstant.NOW_PLAYING,
-            this.nowPlayingMovieDetails
+            this.listNowPlayingMovie
         )
         val popularMovie = Movie(
             isExpanded = movieState.isPopularMovieExpanded,
             sectionName = AppConstant.MOST_POPULAR,
-            this.popularMovieDetail
+            this.listPopularMovie
         )
         val upcomingMovie = Movie(
             isExpanded = movieState.isUpcomingMovieExpanded,
             sectionName = AppConstant.UPCOMING,
-            this.upcomingMovieDetails
+            this.listUpComingMovie
         )
         val topRatedMovie = Movie(
             isExpanded = movieState.isTopRatedMovieExpanded,
             sectionName = AppConstant.TOP_RATED,
-            this.topRatedMovieDetails
+            this.listTopRatedMovie
         )
         return listOf(nowPlayingMovie, popularMovie, upcomingMovie, topRatedMovie)
     }
 
-    fun getListNowPlayingMovies() {
-
-        viewModelScope.launch(coroutineExceptionHandler) {
-            getListMovieNowPlayingUseCase.execute()
-                .flowOn(ioDispatcher)
-                .collect { result ->
-                    when (result) {
-                        is Response.Loading -> showLoading()
-                        is Response.Fail -> {
-                            result.exception.localizedMessage?.let { showErrorToast(it) }
-                        }
-                        is Response.Success -> {
-                            hideLoading()
-                            _listMovies.emit(
-                                getDefaultMovieList(
-                                    nowPlayingMovieDetails = result.data.results,
-                                    popularMovieDetail = popularMovieDetail,
-                                    upcomingMovieDetails = upcomingMovieDetails,
-                                    topRatedMovieDetails = topRatedMovieDetails
-                                )
-                            )
-                            if (movieState.isNowPlayingExpanded) {
-                                delay(AppConstant.DELAY_IN_MILLIS)
-                                getListNowPlayingMovies()
-                            }
-
-                        }
-                    }
-                }
-        }
-    }
-
-
-    fun getListMoviesPopular() {
-        if (popularMovieDetail.isEmpty()) {
+    fun getMovieSectionDetails(vararg sectionName: String) {
+        sectionName.forEach { section ->
             viewModelScope.launch(coroutineExceptionHandler) {
-                getListMoviesPopularUseCase.execute()
-                    .flowOn(ioDispatcher)
+                getListMovieSectionsUseCase.execute(getEndPoint(section)).flowOn(ioDispatcher)
                     .collect { result ->
                         when (result) {
                             is Response.Loading -> showLoading()
                             is Response.Fail -> {
                                 result.exception.localizedMessage?.let { showErrorToast(it) }
                             }
+
                             is Response.Success -> {
                                 hideLoading()
-                                _listMovies.emit(
-                                    getDefaultMovieList(
-                                        popularMovieDetail = result.data.moviesPopularDetails,
-                                        nowPlayingMovieDetails = nowPlayingMovieDetails,
-                                        upcomingMovieDetails = upcomingMovieDetails,
-                                        topRatedMovieDetails = topRatedMovieDetails
-                                    )
-                                )
+                                observeDataBasedOnSection(section, result.data)
                             }
                         }
                     }
@@ -146,63 +99,63 @@ class MovieListViewModel @Inject constructor(
         }
     }
 
-
-    private fun getListUpcomingMovies() {
-        if (upcomingMovieDetails.isEmpty()) {
-            viewModelScope.launch(coroutineExceptionHandler) {
-                getListMovieUpcomingUseCase.execute()
-                    .flowOn(ioDispatcher)
-                    .collect { result ->
-                        when (result) {
-                            is Response.Loading -> showLoading()
-                            is Response.Fail -> {
-                                result.exception.localizedMessage?.let { showErrorToast(it) }
-                            }
-                            is Response.Success -> {
-                                hideLoading()
-                                _listMovies.emit(
-                                    getDefaultMovieList(
-                                        upcomingMovieDetails = result.data.results,
-                                        popularMovieDetail = popularMovieDetail,
-                                        topRatedMovieDetails = topRatedMovieDetails,
-                                        nowPlayingMovieDetails = nowPlayingMovieDetails
-                                    )
-                                )
-                            }
-                        }
-                    }
-            }
+    private fun getEndPoint(section: String): String {
+        return when (section) {
+            AppConstant.NOW_PLAYING -> AppConstant.NOW_PLAYING_ENDPOINT
+            AppConstant.MOST_POPULAR -> AppConstant.POPULAR_MOVIE_ENDPOINT
+            AppConstant.UPCOMING -> AppConstant.UPCOMING_MOVIE_ENDPOINT
+            AppConstant.TOP_RATED -> AppConstant.TOP_RATED_ENDPOINT
+            else -> ""
         }
     }
 
+    private suspend fun observeDataBasedOnSection(sectionName: String, data: ListMovieSections) {
+        when (sectionName) {
+            AppConstant.NOW_PLAYING -> {
+                _listMovies.emit(
+                    getDefaultMovieList(
+                        data.results,
+                        listPopularMovie,
+                        listUpComingMovie,
+                        listTopRatedMovie
+                    )
+                )
+            }
 
-    private fun getListTopRatedMovies() {
-        if (topRatedMovieDetails.isEmpty()) {
-            viewModelScope.launch(coroutineExceptionHandler) {
-                getListMovieTopRatedUseCase.execute()
-                    .flowOn(ioDispatcher)
-                    .collect { result ->
-                        when (result) {
-                            is Response.Loading -> showLoading()
-                            is Response.Fail -> {
-                                result.exception.localizedMessage?.let { showErrorToast(it) }
-                            }
-                            is Response.Success -> {
-                                hideLoading()
-                                _listMovies.emit(
-                                    getDefaultMovieList(
-                                        topRatedMovieDetails = result.data.results,
-                                        popularMovieDetail = popularMovieDetail,
-                                        upcomingMovieDetails = upcomingMovieDetails,
-                                        nowPlayingMovieDetails = nowPlayingMovieDetails
-                                    )
-                                )
-                            }
-                        }
+            AppConstant.MOST_POPULAR -> {
+                _listMovies.emit(
+                    getDefaultMovieList(
+                        listNowPlayingMovie,
+                        data.results,
+                        listUpComingMovie,
+                        listTopRatedMovie
+                    )
+                )
+            }
 
-                    }
+            AppConstant.UPCOMING -> {
+                _listMovies.emit(
+                    getDefaultMovieList(
+                        listNowPlayingMovie,
+                        listPopularMovie,
+                        data.results,
+                        listTopRatedMovie
+                    )
+                )
+            }
+
+            AppConstant.TOP_RATED -> {
+                _listMovies.emit(
+                    getDefaultMovieList(
+                        listNowPlayingMovie,
+                        listPopularMovie,
+                        listUpComingMovie,
+                        data.results
+                    )
+                )
             }
         }
+
     }
 
     fun setMovieState(movie: Movie) {
@@ -210,25 +163,28 @@ class MovieListViewModel @Inject constructor(
             AppConstant.NOW_PLAYING -> {
                 movieState.isNowPlayingExpanded = movie.isExpanded
                 if (movie.isExpanded) {
-                    getListNowPlayingMovies()
+                    getMovieSectionDetails(AppConstant.NOW_PLAYING)
                 }
             }
+
             AppConstant.UPCOMING -> {
                 movieState.isUpcomingMovieExpanded = movie.isExpanded
                 if (movie.isExpanded) {
-                    getListUpcomingMovies()
+                    getMovieSectionDetails(AppConstant.UPCOMING)
                 }
             }
+
             AppConstant.TOP_RATED -> {
                 movieState.isTopRatedMovieExpanded = movie.isExpanded
                 if (movie.isExpanded) {
-                    getListTopRatedMovies()
+                    getMovieSectionDetails(AppConstant.TOP_RATED)
                 }
             }
+
             AppConstant.MOST_POPULAR -> {
                 movieState.isPopularMovieExpanded = movie.isExpanded
                 if (movie.isExpanded) {
-                    getListMoviesPopular()
+                    getMovieSectionDetails(AppConstant.MOST_POPULAR)
                 }
             }
         }

@@ -1,7 +1,6 @@
 package com.restaurant.movielistapplication.base
 
 import androidx.lifecycle.ViewModel
-import com.restaurant.movielistapplication.utils.AppConstant
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.flow.MutableStateFlow
 
@@ -37,6 +36,4 @@ open class BaseViewModel : ViewModel() {
         hideLoading()
         showErrorToast.value = error
     }
-
-
 }

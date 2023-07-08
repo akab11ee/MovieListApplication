@@ -6,7 +6,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
 import com.restaurant.movielistapplication.utils.toastL
 import com.restaurant.movielistapplication.utils.view.CustomProgressDialog
-import kotlinx.coroutines.flow.collect
 
 /**
  * @Author: Akash Abhishek

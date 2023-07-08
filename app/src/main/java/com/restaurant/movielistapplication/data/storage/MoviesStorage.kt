@@ -1,9 +1,6 @@
 package com.restaurant.movielistapplication.data.storage
 
-import com.restaurant.movielistapplication.data.storage.models.movienowplaying.ListMovieNowPlayingEntity
-import com.restaurant.movielistapplication.data.storage.models.moviespopular.ListMoviesPopularEntity
-import com.restaurant.movielistapplication.data.storage.models.movietoprated.ListMovieTopRatedEntity
-import com.restaurant.movielistapplication.data.storage.models.movieupcoming.ListMovieUpcomingEntity
+import com.restaurant.movielistapplication.data.storage.model.ListMovieSectionsEntity
 import com.restaurant.movielistapplication.domain.models.Response
 import kotlinx.coroutines.flow.Flow
 
@@ -13,11 +10,6 @@ import kotlinx.coroutines.flow.Flow
  */
 
 interface MoviesStorage {
-    suspend fun getMoviesPopular(): Flow<Response<ListMoviesPopularEntity>>
+    suspend fun getMovieSections(sectionName: String): Flow<Response<ListMovieSectionsEntity>>
 
-    suspend fun getMoviesNowPlaying(): Flow<Response<ListMovieNowPlayingEntity>>
-
-    suspend fun getMoviesTopRated(): Flow<Response<ListMovieTopRatedEntity>>
-
-    suspend fun getMoviesUpcoming(): Flow<Response<ListMovieUpcomingEntity>>
 }

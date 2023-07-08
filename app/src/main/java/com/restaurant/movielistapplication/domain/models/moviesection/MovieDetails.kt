@@ -1,4 +1,4 @@
-package com.restaurant.movielistapplication.domain.models
+package com.restaurant.movielistapplication.domain.models.moviesection
 
 import android.os.Parcel
 import android.os.Parcelable

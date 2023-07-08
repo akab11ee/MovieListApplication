@@ -2,10 +2,10 @@ package com.restaurant.movielistapplication.data.repository
 
 import com.restaurant.movielistapplication.data.storage.MoviesStorage
 import com.restaurant.movielistapplication.domain.models.Response
-import com.restaurant.movielistapplication.getNowPlayingMovieEntity
+import com.restaurant.movielistapplication.getMovieSectionsEntityResponse
+import com.restaurant.movielistapplication.utils.AppConstant
 import io.mockk.every
 import io.mockk.mockk
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.assertEquals
@@ -31,16 +31,16 @@ class MoviesRepositoryImplTest {
     @Test
     fun `success response gives Response Success data`() {
         // Arrange
-        val movieNowPlayingEntity = getNowPlayingMovieEntity()
+        val movieNowPlayingEntity = getMovieSectionsEntityResponse()
         every {
             runBlocking {
-                moviesStorage.getMoviesNowPlaying()
+                moviesStorage.getMovieSections(AppConstant.NOW_PLAYING)
             }
         } returns flow { emit(Response.Success(movieNowPlayingEntity)) }
 
         // Act
         runBlocking {
-            moviesRepositoryImpl.getMoviesNowPlaying().collect {
+            moviesRepositoryImpl.getMovieSections(AppConstant.NOW_PLAYING).collect {
                 assertEquals(it is Response.Success, true)
             }
 
@@ -52,13 +52,13 @@ class MoviesRepositoryImplTest {
         // Arrange
         every {
             runBlocking {
-                moviesStorage.getMoviesNowPlaying()
+                moviesStorage.getMovieSections(AppConstant.NOW_PLAYING)
             }
         } returns flow { emit(Response.Fail(NullPointerException())) }
 
         // Act
         runBlocking {
-            moviesRepositoryImpl.getMoviesNowPlaying().collect {
+            moviesRepositoryImpl.getMovieSections(AppConstant.NOW_PLAYING).collect {
                 assertEquals(it is Response.Fail, true)
             }
 

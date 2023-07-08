@@ -6,8 +6,6 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavDirections
-import androidx.navigation.fragment.findNavController
 
 /**
  * @Author: Akash Abhishek
@@ -29,9 +27,4 @@ fun Context.hideKeyboard(view: View) {
 
 fun Context.toastL(message: String) {
     Toast.makeText(this, message, Toast.LENGTH_LONG).show()
-}
-
-fun Fragment.navigate(destination: NavDirections) = with(findNavController()) {
-    currentDestination?.getAction(destination.actionId)
-        ?.let { navigate(destination) }
 }

@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.restaurant.movielistapplication.R
 import com.restaurant.movielistapplication.databinding.ItemMovieChildBinding
-import com.restaurant.movielistapplication.domain.models.MovieDetails
+import com.restaurant.movielistapplication.domain.models.moviesection.MovieDetails
 import com.restaurant.movielistapplication.presentation.interfaces.OnChildItemClickListener
 
 /**

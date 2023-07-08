@@ -1,6 +1,6 @@
 package com.restaurant.movielistapplication.presentation.interfaces
 
-import com.restaurant.movielistapplication.domain.models.MovieDetails
+import com.restaurant.movielistapplication.domain.models.moviesection.MovieDetails
 
 /**
  * @Author: Akash Abhishek

@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import com.restaurant.movielistapplication.base.BaseBottomSheetDialog
 import com.restaurant.movielistapplication.databinding.LayoutDialogBinding
-import com.restaurant.movielistapplication.domain.models.MovieDetails
+import com.restaurant.movielistapplication.domain.models.moviesection.MovieDetails
 import com.restaurant.movielistapplication.utils.AppConstant
 import com.restaurant.movielistapplication.utils.toastL
 
@@ -14,7 +14,6 @@ import com.restaurant.movielistapplication.utils.toastL
  */
 
 class MovieDetailBottomSheetDialog : BaseBottomSheetDialog<LayoutDialogBinding>() {
-
     companion object {
         fun newInstance(movieDetails: MovieDetails): MovieDetailBottomSheetDialog {
             val fragment = MovieDetailBottomSheetDialog()
