@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.restaurant.movielistapplication.R
 import com.restaurant.movielistapplication.base.BaseActivity
 import com.restaurant.movielistapplication.databinding.ActivityMovieBinding
 import com.restaurant.movielistapplication.domain.models.movie.Movie
@@ -12,6 +13,8 @@ import com.restaurant.movielistapplication.presentation.adapter.MovieParentAdapt
 import com.restaurant.movielistapplication.presentation.dialog.MovieDetailBottomSheetDialog
 import com.restaurant.movielistapplication.presentation.interfaces.OnParentItemClickListener
 import com.restaurant.movielistapplication.utils.AppConstant
+import com.restaurant.movielistapplication.utils.isConnected
+import com.restaurant.movielistapplication.utils.toastL
 import dagger.hilt.android.AndroidEntryPoint
 
 /**
@@ -33,10 +36,23 @@ class MovieListActivity : BaseActivity<ActivityMovieBinding, MovieListViewModel>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.getMovieSectionDetails(AppConstant.NOW_PLAYING, AppConstant.MOST_POPULAR)
+        getInitialData()
         initRecyclerView()
         observeMovieListResponse()
     }
+
+    // Populating data for now playing and most popular on app start
+    private fun getInitialData() {
+        when {
+            isConnected -> viewModel.getMovieSectionDetails(
+                AppConstant.NOW_PLAYING,
+                AppConstant.MOST_POPULAR
+            )
+
+            else -> toastL(getString(R.string.no_internet))
+        }
+    }
+
 
     private fun initRecyclerView() {
         movieParentAdapter = MovieParentAdapter()
@@ -58,7 +74,10 @@ class MovieListActivity : BaseActivity<ActivityMovieBinding, MovieListViewModel>
     }
 
     override fun onItemClick(movie: Movie) {
-        viewModel.setMovieState(movie)
+        when {
+            isConnected -> viewModel.setMovieState(movie)
+            else -> toastL(getString(R.string.no_internet))
+        }
     }
 
     override fun onMovieClick(movie: MovieDetails) {
