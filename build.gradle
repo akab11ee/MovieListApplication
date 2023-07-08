@@ -24,7 +24,7 @@ ext {
     retrofit          = "2.9.0"
     httpLogging       = "5.0.0-alpha.2"
     test_monitor      = "1.5.0"
-    coroutines        = "1.5.1-native-mt"
+    coroutines        = "1.6.0-RC3"
     view_model        = "2.4.1"
     test_arch         = "2.1.0"
     live_data         = "2.4.1"
