@@ -30,7 +30,7 @@ abstract class BaseActivity<VB : ViewBinding, VM : BaseViewModel> :
         setupErrorMessage()
     }
 
-    //Show error dialog in case of any coroutine exception
+    //Show error toast in case of any coroutine exception
     private fun setupErrorMessage() {
         lifecycleScope.launchWhenCreated {
             viewModel.showErrorToast.collect {

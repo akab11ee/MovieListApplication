@@ -14,7 +14,7 @@ open class BaseViewModel : ViewModel() {
     val showLoadingDialog = MutableStateFlow(false)
     val showErrorToast = MutableStateFlow("")
 
-    //capture coroutine exception and show it in dialog to user
+    //capture coroutine exception and show it as toast to user
     val coroutineExceptionHandler = CoroutineExceptionHandler { _, exception ->
         hideLoading()
         exception.localizedMessage?.let { showErrorToast(it) }
